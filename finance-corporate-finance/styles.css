@@ -26,10 +26,10 @@
   --ts-var-button--tertiary--hover-background: #ECEFF4;
   --ts-var-button--tertiary--active-background: #E3E7EE;
   --ts-var-viz-title-color: #20242B;
-  --ts-var-viz-title-font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-viz-title-font-family: "Instrument Serif", "Inter", "Segoe UI", Arial, sans-serif;
   --ts-var-viz-title-text-transform: none;
   --ts-var-viz-description-color: #8A9099;
-  --ts-var-viz-description-font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-viz-description-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
   --ts-var-viz-description-text-transform: uppercase;
   --ts-var-viz-border-radius: 6px;
   --ts-var-viz-box-shadow: none;
