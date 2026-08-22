@@ -4,7 +4,7 @@
 :root {
   --ts-var-root-background: #F3F4F6;
   --ts-var-root-color: #2F343C;
-  --ts-var-root-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-root-font-family: "IBM Plex Mono", monospace;
   --ts-var-root-text-transform: none;
   --ts-var-application-color: #5B6F95;
   --ts-var-nav-background: #F3F4F6;
@@ -12,12 +12,12 @@
   --ts-var-button-border-radius: 6px;
   --ts-var-button--icon-border-radius: 6px;
   --ts-var-button--primary-color: #FFFFFF;
-  --ts-var-button--primary--font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-button--primary--font-family: "IBM Plex Mono", monospace;
   --ts-var-button--primary-background: #5B6F95;
   --ts-var-button--primary--hover-background: #4F6286;
   --ts-var-button--primary--active-background: #445776;
   --ts-var-button--secondary-color: #4C5563;
-  --ts-var-button--secondary--font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-button--secondary--font-family: "IBM Plex Mono", monospace;
   --ts-var-button--secondary-background: #E9EBEF;
   --ts-var-button--secondary--hover-background: #E1E5EA;
   --ts-var-button--secondary--active-background: #D8DDE4;
@@ -26,10 +26,10 @@
   --ts-var-button--tertiary--hover-background: #ECEFF4;
   --ts-var-button--tertiary--active-background: #E3E7EE;
   --ts-var-viz-title-color: #20242B;
-  --ts-var-viz-title-font-family: "Instrument Serif", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-viz-title-font-family: "Instrument Serif", serif;
   --ts-var-viz-title-text-transform: none;
   --ts-var-viz-description-color: #8A9099;
-  --ts-var-viz-description-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-viz-description-font-family: "IBM Plex Mono", monospace;
   --ts-var-viz-description-text-transform: uppercase;
   --ts-var-viz-border-radius: 6px;
   --ts-var-viz-box-shadow: none;
@@ -43,14 +43,14 @@
   --ts-var-chip--hover-background: #E3E8EE;
   --ts-var-chip--active-color: #2E3642;
   --ts-var-chip--active-background: #D9E0EA;
-  --ts-var-chip-title-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-chip-title-font-family: "IBM Plex Mono", monospace;
   --ts-var-axis-title-color: #7B838E;
-  --ts-var-axis-title-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-axis-title-font-family: "Instrument Serif", serif;
   --ts-var-axis-data-label-color: #8E96A1;
-  --ts-var-axis-data-label-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-axis-data-label-font-family: "IBM Plex Mono", monospace;
   --ts-var-menu-color: #353C46;
   --ts-var-menu-background: #F8F8F7;
-  --ts-var-menu-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-menu-font-family: "IBM Plex Mono", monospace;
   --ts-var-menu-text-transform: none;
   --ts-var-menu--hover-background: #EEF1F4;
   --ts-var-menu-selected-text-color: #5B6F95;
