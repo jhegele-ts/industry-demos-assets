@@ -12,12 +12,12 @@
   --ts-var-button-border-radius: 6px;
   --ts-var-button--icon-border-radius: 6px;
   --ts-var-button--primary-color: #FFFFFF;
-  --ts-var-button--primary--font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-button--primary--font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
   --ts-var-button--primary-background: #5B6F95;
   --ts-var-button--primary--hover-background: #4F6286;
   --ts-var-button--primary--active-background: #445776;
   --ts-var-button--secondary-color: #4C5563;
-  --ts-var-button--secondary--font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-button--secondary--font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
   --ts-var-button--secondary-background: #E9EBEF;
   --ts-var-button--secondary--hover-background: #E1E5EA;
   --ts-var-button--secondary--active-background: #D8DDE4;
@@ -43,14 +43,14 @@
   --ts-var-chip--hover-background: #E3E8EE;
   --ts-var-chip--active-color: #2E3642;
   --ts-var-chip--active-background: #D9E0EA;
-  --ts-var-chip-title-font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-chip-title-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
   --ts-var-axis-title-color: #7B838E;
-  --ts-var-axis-title-font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-axis-title-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
   --ts-var-axis-data-label-color: #8E96A1;
-  --ts-var-axis-data-label-font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-axis-data-label-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
   --ts-var-menu-color: #353C46;
   --ts-var-menu-background: #F8F8F7;
-  --ts-var-menu-font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  --ts-var-menu-font-family: "IBM Plex Mono", "Inter", "Segoe UI", Arial, sans-serif;
   --ts-var-menu-text-transform: none;
   --ts-var-menu--hover-background: #EEF1F4;
   --ts-var-menu-selected-text-color: #5B6F95;
@@ -148,16 +148,4 @@
   --ts-var-liveboard-edit-toolbar-hover-text-color: #3E4958;
   --ts-var-shimmer-background: #ECEFF3;
   --ts-var-shimmer-sweep-background: #F7F8FA;
-}
-
-.pinboard-header-module__pinboardHeaderContainer {
-  display: none !important;
-}
-
-.pinboard-header-module__pinboardHeader {
-  display: none !important;
-}
-
-.pinboard-header-module__tabAndFilterWrapper {
-  display: none !important;
 }
