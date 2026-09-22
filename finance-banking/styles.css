@@ -49,6 +49,15 @@
                        rendered as Georgia anyway on some machines and as
                        Roboto on others.
 
+   - liveboard-header-action-button-hover-color: #FFFFFF -> #171412. The
+     export set the hover TEXT colour to white while ThoughtSpot swaps the
+     button's background to a pale one on hover, so the Marginal button
+     turned white-on-cream and vanished under the pointer — still clickable,
+     which made it look like a rendering glitch rather than a colour. Ink
+     survives whatever the hover background does. Compare Forepost, which
+     never hits this because its action button is transparent with dark text
+     throughout.
+
    ONLY ARCHIVO IS IMPORTED. Instrument Serif and IBM Plex Mono were dropped
    once no variable named them; an unused @import is a font download inside
    the iframe for nothing. Name a new family here and you must import it, or
@@ -173,7 +182,7 @@
   --ts-var-parameter-chip-active-text-color: #FFFFFF;
   --ts-var-liveboard-header-action-button-background: #1E4ED8;
   --ts-var-liveboard-header-action-button-font-color: #FFFFFF;
-  --ts-var-liveboard-header-action-button-hover-color: #FFFFFF;
+  --ts-var-liveboard-header-action-button-hover-color: #171412;
   --ts-var-liveboard-header-action-button-active-color: #FFFFFF;
   --ts-var-liveboard-header-badge-background: #ECE7DC;
   --ts-var-liveboard-header-badge-font-color: #171412;
