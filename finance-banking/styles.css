@@ -1,1 +1,193 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ===========================================================================
+   LedgerWise — theme for the embedded ThoughtSpot iframe
+   ---------------------------------------------------------------------------
+   Hosted, and loaded through `style.customCSSUrl` (NEXT_PUBLIC_EMBED_CSS_URL).
+
+   The whole theme lives in this one file on purpose: the @import rules above
+   LOAD the typefaces, and the variables below NAME them. Split across two
+   places they drift, and the symptom is a font silently falling back with no
+   error anywhere.
+
+   Why a hosted file is needed at all: the app loads its fonts with next/font,
+   which injects @font-face into the HOST document. A cross-origin iframe has
+   its own document and inherits none of it, so a stylesheet the iframe
+   fetches itself is the only way across that boundary.
+
+   EDITING
+   Design the theme in Develop > Customizations > Theme Builder, export, and
+   paste the variables over the block below — do not hand-edit single values,
+   or this file drifts from what the tool produces and the next export
+   silently reverts the fix. Then re-apply the ten deliberate departures
+   listed under CHANGES.
+
+   CLUSTER-SIDE
+   The instance's CSP must allow this file's origin plus fonts.googleapis.com
+   and fonts.gstatic.com. Blocked, the browser drops the stylesheet without
+   an error and the symptom is simply "nothing changed".
+
+   CHANGES from the raw Theme Builder export (10 of 148 variables)
+   - root-text-transform: uppercase -> none. Uppercase was fine when the
+     embed held only short axis labels; the AI insight tile renders
+     PARAGRAPHS, and caps on prose is unreadable. Menus keep their own caps
+     via menu-text-transform, and viz titles and descriptions were already
+     none, so little else is affected.
+   - The nine font-family variables named Canela, IvyPresto Display and
+     Inter. The app uses none of those. They now name the three families the
+     app actually loads, which are the three imported above.
+   ======================================================================== */
+
+:root {
+  --ts-var-root-background: #F3F0E9;
+  --ts-var-root-color: #171412;
+  --ts-var-root-font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --ts-var-root-text-transform: none;
+  --ts-var-nav-background: #0F0B09;
+  --ts-var-nav-color: #F3F0E9;
+  --ts-var-application-color: #171412;
+  --ts-var-button-border-radius: 2px;
+  --ts-var-button--icon-border-radius: 2px;
+  --ts-var-button--primary-color: #FFFFFF;
+  --ts-var-button--primary--font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ts-var-button--primary-background: #1E4ED8;
+  --ts-var-button--primary--hover-background: #1A43BB;
+  --ts-var-button--primary--active-background: #15389B;
+  --ts-var-button--secondary-color: #171412;
+  --ts-var-button--secondary--font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ts-var-button--secondary-background: #ECE7DC;
+  --ts-var-button--secondary--hover-background: #E1DACB;
+  --ts-var-button--secondary--active-background: #D5CCBA;
+  --ts-var-button--tertiary-color: #171412;
+  --ts-var-button--tertiary-background: #F3F0E9;
+  --ts-var-button--tertiary--hover-background: #ECE7DC;
+  --ts-var-button--tertiary--active-background: #E1DACB;
+  --ts-var-viz-title-color: #171412;
+  --ts-var-viz-title-font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --ts-var-viz-title-text-transform: none;
+  --ts-var-viz-description-color: #6F675E;
+  --ts-var-viz-description-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ts-var-viz-description-text-transform: none;
+  --ts-var-viz-border-radius: 4px;
+  --ts-var-viz-box-shadow: 0 1px 2px rgba(23, 20, 18, 0.06);
+  --ts-var-viz-background: #FCFBF8;
+  --ts-var-chip-border-radius: 2px;
+  --ts-var-chip-box-shadow: none;
+  --ts-var-chip-background: #ECE7DC;
+  --ts-var-chip-color: #171412;
+  --ts-var-chip--hover-color: #171412;
+  --ts-var-chip--hover-background: #E1DACB;
+  --ts-var-chip--active-color: #FFFFFF;
+  --ts-var-chip--active-background: #171412;
+  --ts-var-chip-title-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ts-var-axis-title-color: #4F4842;
+  --ts-var-axis-title-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ts-var-axis-data-label-color: #6F675E;
+  --ts-var-axis-data-label-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ts-var-menu-color: #171412;
+  --ts-var-menu-background: #FCFBF8;
+  --ts-var-menu-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ts-var-menu-text-transform: uppercase;
+  --ts-var-menu--hover-background: #F3F0E9;
+  --ts-var-menu-selected-text-color: #1E4ED8;
+  --ts-var-dialog-body-background: #FCFBF8;
+  --ts-var-dialog-body-color: #171412;
+  --ts-var-dialog-header-background: #0F0B09;
+  --ts-var-dialog-header-color: #F3F0E9;
+  --ts-var-dialog-footer-background: #F3F0E9;
+  --ts-var-list-selected-background: #ECE7DC;
+  --ts-var-list-hover-background: #F3F0E9;
+  --ts-var-segment-control-hover-background: #ECE7DC;
+  --ts-var-checkbox-border-color: #B8AEA0;
+  --ts-var-checkbox-hover-border: #171412;
+  --ts-var-checkbox-active-color: #1E4ED8;
+  --ts-var-checkbox-checked-color: #1E4ED8;
+  --ts-var-checkbox-checked-disabled: #B8AEA0;
+  --ts-var-checkbox-background-color: #FCFBF8;
+  --ts-var-checkbox-error-border: #B42318;
+  --ts-var-liveboard-layout-background: #F3F0E9;
+  --ts-var-liveboard-header-background: #F3F0E9;
+  --ts-var-liveboard-header-font-color: #171412;
+  --ts-var-liveboard-tile-border-color: #D9D1C4;
+  --ts-var-liveboard-tile-background: #FCFBF8;
+  --ts-var-liveboard-insight-tile-font-color: #171412;
+  --ts-var-liveboard-insight-tile-background: #FCFBF8;
+  --ts-var-liveboard-insight-tile-icon-color: #1E4ED8;
+  --ts-var-liveboard-insight-tile-success-color: #157F3B;
+  --ts-var-liveboard-insight-tile-failure-color: #B42318;
+  --ts-var-liveboard-tile-border-radius: 4px;
+  --ts-var-liveboard-tile-padding: 12px;
+  --ts-var-liveboard-tile-table-header-background: #F3F0E9;
+  --ts-var-liveboard-group-padding: 16px;
+  --ts-var-liveboard-group-title-font-size: 20px;
+  --ts-var-liveboard-group-title-font-weight: 500;
+  --ts-var-liveboard-group-tile-title-font-size: 14px;
+  --ts-var-liveboard-group-tile-title-font-weight: 500;
+  --ts-var-liveboard-group-tile-padding: 12px;
+  --ts-var-liveboard-answer-viz-padding: 12px;
+  --ts-var-liveboard-group-background: #EFE9DE;
+  --ts-var-liveboard-group-border-color: #D9D1C4;
+  --ts-var-liveboard-notetitle-heading-font-color: #171412;
+  --ts-var-liveboard-notetitle-body-font-color: #4F4842;
+  --ts-var-liveboard-group-title-font-color: #171412;
+  --ts-var-liveboard-group-description-font-color: #6F675E;
+  --ts-var-liveboard-group-tile-title-font-color: #171412;
+  --ts-var-liveboard-group-tile-description-font-color: #6F675E;
+  --ts-var-liveboard-group-tile-background: #FCFBF8;
+  --ts-var-liveboard-chip-background: #ECE7DC;
+  --ts-var-liveboard-chip-color: #171412;
+  --ts-var-liveboard-chip--hover-background: #E1DACB;
+  --ts-var-liveboard-chip--active-background: #171412;
+  --ts-var-side-panel-width: 360px;
+  --ts-var-liveboard-edit-bar-background: #F3F0E9;
+  --ts-var-liveboard-dual-column-breakpoint: 1200px;
+  --ts-var-liveboard-single-column-breakpoint: 768px;
+  --ts-var-liveboard-cross-filter-layout-background: #F3F0E9;
+  --ts-var-liveboard-tab-active-border-color: #171412;
+  --ts-var-liveboard-tab-hover-color: #171412;
+  --ts-var-liveboard-tile-title-fontsize: 16px;
+  --ts-var-liveboard-tile-title-fontweight: 500;
+  --ts-var-parameter-chip-background: #ECE7DC;
+  --ts-var-parameter-chip-text-color: #171412;
+  --ts-var-parameter-chip-hover-background: #E1DACB;
+  --ts-var-parameter-chip-hover-text-color: #171412;
+  --ts-var-parameter-chip-active-background: #1E4ED8;
+  --ts-var-parameter-chip-active-text-color: #FFFFFF;
+  --ts-var-liveboard-header-action-button-background: #1E4ED8;
+  --ts-var-liveboard-header-action-button-font-color: #FFFFFF;
+  --ts-var-liveboard-header-action-button-hover-color: #FFFFFF;
+  --ts-var-liveboard-header-action-button-active-color: #FFFFFF;
+  --ts-var-liveboard-header-badge-background: #ECE7DC;
+  --ts-var-liveboard-header-badge-font-color: #171412;
+  --ts-var-liveboard-header-badge-modified-background: #1E4ED8;
+  --ts-var-liveboard-header-badge-modified-font-color: #FFFFFF;
+  --ts-var-liveboard-header-badge-hover-color: #171412;
+  --ts-var-liveboard-header-badge-active-color: #171412;
+  --ts-var-kpi-hero-color: #171412;
+  --ts-var-kpi-comparison-color: #6F675E;
+  --ts-var-kpi-analyze-text-color: #1E4ED8;
+  --ts-var-chart-heatmap-legend-title-color: #171412;
+  --ts-var-chart-heatmap-legend-label-color: #6F675E;
+  --ts-var-chart-treemap-legend-title-color: #171412;
+  --ts-var-chart-treemap-legend-label-color: #6F675E;
+  --ts-var-kpi-positive-change-color: #157F3B;
+  --ts-var-kpi-negative-change-color: #B42318;
+  --ts-var-liveboard-styling-panel-text-color: #171412;
+  --ts-var-liveboard-styling-panel-border-color: #D9D1C4;
+  --ts-var-liveboard-styling-button-background: #FCFBF8;
+  --ts-var-liveboard-styling-button-text-color: #171412;
+  --ts-var-liveboard-styling-button-hover-background: #F3F0E9;
+  --ts-var-liveboard-styling-button-active-background: #ECE7DC;
+  --ts-var-liveboard-styling-button-hover-text-color: #171412;
+  --ts-var-liveboard-styling-button-shadow: 0 1px 2px rgba(23, 20, 18, 0.06);
+  --ts-var-liveboard-styling-color-palette-background: #FCFBF8;
+  --ts-var-liveboard-edit-toolbar-border: #D9D1C4;
+  --ts-var-liveboard-edit-toolbar-selected-background: #171412;
+  --ts-var-liveboard-edit-toolbar-selected-text-color: #FFFFFF;
+  --ts-var-liveboard-edit-toolbar-text: #171412;
+  --ts-var-liveboard-edit-toolbar-hover-background: #ECE7DC;
+  --ts-var-liveboard-edit-toolbar-hover-text-color: #171412;
+}
