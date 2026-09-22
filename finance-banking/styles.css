@@ -1,7 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 /* ===========================================================================
    LedgerWise — theme for the embedded ThoughtSpot iframe
@@ -37,14 +34,32 @@
      via menu-text-transform, and viz titles and descriptions were already
      none, so little else is affected.
    - The nine font-family variables named Canela, IvyPresto Display and
-     Inter. The app uses none of those. They now name the three families the
-     app actually loads, which are the three imported above.
+     Inter. The app uses none of those.
+       root and everything else -> Archivo. Root is the embed's BODY face and
+                       the host sets `body { font-family: Archivo }` to
+                       match. It was briefly Instrument Serif, which was
+                       wrong twice over: a display face, and a single weight
+                       (400), so the insight tile's bold figures had no bold
+                       cut and stopped reading as emphasis at all.
+       viz-title    -> Georgia. A system serif, present on every Mac and
+                       Windows machine, so it needs no @import and cannot
+                       differ between one demoer's laptop and another's.
+                       It was briefly "Roboto", which is neither imported
+                       here nor installed by default — that silently
+                       rendered as Georgia anyway on some machines and as
+                       Roboto on others.
+
+   ONLY ARCHIVO IS IMPORTED. Instrument Serif and IBM Plex Mono were dropped
+   once no variable named them; an unused @import is a font download inside
+   the iframe for nothing. Name a new family here and you must import it, or
+   it falls back silently and the result depends on what the viewer happens
+   to have installed.
    ======================================================================== */
 
 :root {
   --ts-var-root-background: #F3F0E9;
   --ts-var-root-color: #171412;
-  --ts-var-root-font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --ts-var-root-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --ts-var-root-text-transform: none;
   --ts-var-nav-background: #0F0B09;
   --ts-var-nav-color: #F3F0E9;
@@ -66,7 +81,7 @@
   --ts-var-button--tertiary--hover-background: #ECE7DC;
   --ts-var-button--tertiary--active-background: #E1DACB;
   --ts-var-viz-title-color: #171412;
-  --ts-var-viz-title-font-family: "Roboto", Georgia, "Times New Roman", serif;
+  --ts-var-viz-title-font-family: Georgia, "Times New Roman", serif;
   --ts-var-viz-title-text-transform: none;
   --ts-var-viz-description-color: #6F675E;
   --ts-var-viz-description-font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
