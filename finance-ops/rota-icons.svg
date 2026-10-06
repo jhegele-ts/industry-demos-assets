@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:0;height:0;visibility:hidden;">
+  <defs/>
+  <!-- Rota mark: the green diamond (lime.500 fill, ink outline) in place of ThoughtSpot's Spotter icons. -->
+  <symbol id="rd-icon-spotter" viewBox="0 0 48 48">
+    <rect x="12" y="12" width="24" height="24" transform="rotate(45 24 24)" fill="#75D079" stroke="#151A15" stroke-width="3"/>
+  </symbol>
+  <symbol id="rd-icon-spotter-viz" viewBox="0 0 48 48">
+    <rect x="12" y="12" width="24" height="24" transform="rotate(45 24 24)" fill="#75D079" stroke="#151A15" stroke-width="3"/>
+  </symbol>
+</svg>
