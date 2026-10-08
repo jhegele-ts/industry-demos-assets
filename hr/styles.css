@@ -1,0 +1,156 @@
+/*
+ * Crewmoth styling for embedded ThoughtSpot content (the Insights Liveboard
+ * and the charts Luna returns).
+ *
+ * Host this file somewhere public, add its URL to the ThoughtSpot allowlist
+ * (Develop > Customizations > Security Settings > CSS), and pass it to init():
+ *
+ *   customizations: { style: { customCSSUrl: "<public url>/styles.css" } }
+ *
+ * Colours are the hex equivalents of the oklch tokens in src/theme/system.ts,
+ * because ThoughtSpot reads some of these values in JavaScript.
+ *
+ *   brand.40  #4c01b9    brand.46  #5a21d3    brand.50  #6433e1
+ *   brand.80  #bab6ef    brand.88  #d5d3f8    brand.93  #e6e5fc
+ *   sun.92    #fce67a    coral.70  #f57050
+ *   ink.900   #16141d    ink.500   #4a4556    slate.600 #5d5a68
+ *   paper.50  #fffdf8    paper.100 #f6f4ee    paper.200 #ece9e0
+ *   paper.300 #dcd8cf
+ */
+
+/* The app loads Bricolage Grotesque through next/font; the embed is a separate
+   document, so it loads its own copy. */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* Application-wide */
+  --ts-var-root-background: #fffdf8;
+  --ts-var-root-color: #16141d;
+  --ts-var-root-secondary-color: #5d5a68;
+  --ts-var-root-font-family: "Bricolage Grotesque", sans-serif;
+  --ts-var-application-color: #16141d;
+  --ts-var-segment-control-hover-background: #ece9e0;
+  --ts-var-nav-background: #fffdf8;
+  --ts-var-nav-color: #16141d;
+
+  /* Liveboard canvas and tiles (cards sit on the paper panel like the app's) */
+  --ts-var-liveboard-layout-background: #fffdf8;
+  --ts-var-viz-background: #f6f4ee;
+  --ts-var-viz-border-radius: 20px;
+  --ts-var-viz-box-shadow: none;
+  --ts-var-viz-title-color: #16141d;
+  --ts-var-viz-title-font-family: "Bricolage Grotesque", sans-serif;
+  --ts-var-viz-description-color: #5d5a68;
+  --ts-var-viz-description-font-family: "Bricolage Grotesque", sans-serif;
+  --ts-var-viz-legend-hover-background: #e6e5fc;
+  --ts-var-liveboard-tile-background: #f6f4ee;
+  --ts-var-liveboard-tile-border-color: #dcd8cf;
+  --ts-var-liveboard-tile-border-radius: 20px;
+  --ts-var-liveboard-tile-padding: 20px;
+  --ts-var-liveboard-tile-title-fontweight: 600;
+  --ts-var-liveboard-tile-table-header-background: #ece9e0;
+  --ts-var-liveboard-header-background: #fffdf8;
+  --ts-var-liveboard-header-font-color: #16141d;
+  --ts-var-liveboard-notetitle-heading-font-color: #16141d;
+  --ts-var-liveboard-notetitle-body-font-color: #4a4556;
+
+  /* Chart axes */
+  --ts-var-axis-data-label-color: #5d5a68;
+  --ts-var-axis-data-label-font-family: "JetBrains Mono", ui-monospace, monospace;
+  --ts-var-axis-title-color: #5d5a68;
+  --ts-var-axis-title-font-family: "JetBrains Mono", ui-monospace, monospace;
+
+  /* KPI charts: purple is "good", coral flags problems */
+  --ts-var-kpi-hero-color: #16141d;
+  --ts-var-kpi-comparison-color: #5d5a68;
+  --ts-var-kpi-positive-change-color: #4c01b9;
+  --ts-var-kpi-negative-change-color: #f57050;
+  --ts-var-kpi-analyze-text-color: #4c01b9;
+
+  /* Tabs */
+  --ts-var-liveboard-tab-font-family: "Bricolage Grotesque", sans-serif;
+  --ts-var-liveboard-tab-color: #16141d;
+  --ts-var-liveboard-tab-hover-background: #ece9e0;
+  --ts-var-liveboard-tab-selected-background: #16141d;
+  --ts-var-liveboard-tab-selected-color: #f6f4ee;
+  --ts-var-liveboard-tab-selected-font-weight: 600;
+  --ts-var-liveboard-tab-border-radius: 999px;
+  --ts-var-liveboard-tab-active-border-color: #4c01b9;
+
+  /* Buttons: primary is brand purple, secondary is the outlined pill */
+  --ts-var-button-border-radius: 999px;
+  --ts-var-button--primary-background: #4c01b9;
+  --ts-var-button--primary-color: #f6f4ee;
+  --ts-var-button--primary-border-color: #4c01b9;
+  --ts-var-button--primary--hover-background: #5a21d3;
+  --ts-var-button--primary--active-background: #3d0194;
+  --ts-var-button--primary--font-family: "Bricolage Grotesque", sans-serif;
+  --ts-var-button--primary-font-weight: 600;
+  --ts-var-button--secondary-background: #fffdf8;
+  --ts-var-button--secondary-color: #16141d;
+  --ts-var-button--secondary-border-color: #16141d;
+  --ts-var-button--secondary--hover-background: #16141d;
+  --ts-var-button--secondary--active-background: #24212d;
+  --ts-var-button--secondary--font-family: "Bricolage Grotesque", sans-serif;
+  --ts-var-button--secondary-font-weight: 500;
+  --ts-var-button--tertiary-background: transparent;
+  --ts-var-button--tertiary-color: #4c01b9;
+  --ts-var-button--tertiary--hover-background: #e6e5fc;
+  --ts-var-button--tertiary--active-background: #d5d3f8;
+  --ts-var-button--tertiary--font-family: "Bricolage Grotesque", sans-serif;
+
+  /* Menus, lists and dialogs */
+  --ts-var-menu-background: #fffdf8;
+  --ts-var-menu-color: #16141d;
+  --ts-var-menu-font-family: "Bricolage Grotesque", sans-serif;
+  --ts-var-menu--hover-background: #e6e5fc;
+  --ts-var-menu-selected-text-color: #4c01b9;
+  --ts-var-menu-separator-background: #dcd8cf;
+  --ts-var-list-hover-background: #e6e5fc;
+  --ts-var-list-selected-background: #d5d3f8;
+  --ts-var-dialog-body-background: #fffdf8;
+  --ts-var-dialog-body-color: #16141d;
+  --ts-var-dialog-footer-background: #f6f4ee;
+  --ts-var-checkbox-checked-color: #4c01b9;
+  --ts-var-checkbox-active-color: #4c01b9;
+  --ts-var-checkbox-hover-border: #4c01b9;
+
+  /* Filter and parameter chips */
+  --ts-var-chip-background: #f6f4ee;
+  --ts-var-chip-color: #16141d;
+  --ts-var-chip-border-radius: 999px;
+  --ts-var-chip-title-font-family: "Bricolage Grotesque", sans-serif;
+  --ts-var-chip--hover-background: #e6e5fc;
+  --ts-var-chip--active-background: #4c01b9;
+  --ts-var-chip--active-color: #f6f4ee;
+  --ts-var-chip--filter-background: #f6f4ee;
+  --ts-var-chip--filter-border-color: #dcd8cf;
+  --ts-var-chip--filter--hover-background: #e6e5fc;
+  --ts-var-chip--filter--hover-border-color: #4c01b9;
+  --ts-var-liveboard-chip-background: #f6f4ee;
+  --ts-var-liveboard-chip-color: #16141d;
+  --ts-var-liveboard-chip--hover-background: #e6e5fc;
+  --ts-var-liveboard-chip--active-background: #4c01b9;
+  --ts-var-parameter-chip-background: #f6f4ee;
+  --ts-var-parameter-chip-text-color: #16141d;
+  --ts-var-parameter-chip-hover-background: #e6e5fc;
+  --ts-var-parameter-chip-active-background: #4c01b9;
+  --ts-var-parameter-chip-active-text-color: #f6f4ee;
+  --ts-var-unsaved-filter-indicator-color: #f57050;
+
+  /* Spotter-generated charts and inputs (the Luna frames) */
+  --ts-var-spotter-input-background: #f6f4ee;
+  --ts-var-spotter-prompt-background: #f6f4ee;
+  --ts-var-answer-chart-select-background: #d5d3f8;
+  --ts-var-answer-chart-hover-background: #e6e5fc;
+  --ts-var-answer-view-table-chart-switcher-background: #f6f4ee;
+  --ts-var-answer-view-table-chart-switcher-active-background: #d5d3f8;
+  --ts-var-shimmer-background: #ece9e0;
+  --ts-var-shimmer-sweep-background: #f6f4ee;
+}
+
+html,
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
