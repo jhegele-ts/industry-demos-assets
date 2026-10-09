@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="width:0;height:0;visibility:hidden;">
+  <defs/>
+  <!--
+    Replaces ThoughtSpot's Spotter icons with Luna's mark: an orb with a bright
+    core (the same shape as the Luna orb in the app). The paths set no fill, so
+    ThoughtSpot's own icon colour (white on a dark button, dark on a light one)
+    applies, and the icon stays visible on any button state.
+    Both symbols are overrides: rd-icon-spotter is the button on visualizations,
+    rd-icon-spotter-viz is the Liveboard edit toolbar button.
+  -->
+  <symbol id="rd-icon-spotter" viewBox="0 0 48 48">
+    <path fill-rule="evenodd" d="M24 2a22 22 0 1 0 0 44 22 22 0 0 0 0-44Zm0 4a18 18 0 1 1 0 36 18 18 0 0 1 0-36Z"/>
+    <circle cx="24" cy="24" r="9"/>
+  </symbol>
+  <symbol id="rd-icon-spotter-viz" viewBox="0 0 48 48">
+    <path fill-rule="evenodd" d="M24 2a22 22 0 1 0 0 44 22 22 0 0 0 0-44Zm0 4a18 18 0 1 1 0 36 18 18 0 0 1 0-36Z"/>
+    <circle cx="24" cy="24" r="9"/>
+  </symbol>
+</svg>
